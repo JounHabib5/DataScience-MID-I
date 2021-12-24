@@ -1,0 +1,20 @@
+---
+title: "MID - I"
+author: "16F-8286;"
+date: "12/24/2021"
+output: pdf_document
+---
+
+
+```{r MID-I}
+
+setwd("C:/Users/DEV/Downloads/Documents/Data Science/MID-I/E10")
+
+pngfile <- pdftools::pdf_convert('e_10_gasoline_price_notification_effective_dated_april_01_2017.pdf', dpi = 600)
+
+text <- tesseract::ocr(pngfile[2])
+text
+write.csv2(text, file=  "data in csv.csv")
+
+```
+
